@@ -1,0 +1,10 @@
+name: python397
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9.7
+  - pip
+  - pip:
+    - ipynb==0.5.1
+    - numpy
+    - pandas
