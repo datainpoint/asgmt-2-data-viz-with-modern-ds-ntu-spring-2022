@@ -1,8 +1,7 @@
 import unittest
 import sqlite3
 import numpy as np
-import pandas as pd
-import exercises as ex
+import ipynb.fs.full.exercises as ex
 
 connection = sqlite3.connect('covid19.db')
 class TestAssignmentTwo(unittest.TestCase):
@@ -39,7 +38,7 @@ class TestAssignmentTwo(unittest.TestCase):
         self.assertEqual(us_from_daily_report.shape, (3278, 3))
     def test_08_find_us_most_ten_confirmed_from_daily_report(self):
         us_most_ten_confirmed_from_daily_report = ex.function_find_us_most_ten_confirmed_from_daily_report(connection)
-        self.assertEqual(us_most_ten_confirmed_from_daily_report.shape, (10, 1))
+        self.assertEqual(us_most_ten_confirmed_from_daily_report.shape, (10, 2))
         combined_keys = us_most_ten_confirmed_from_daily_report["Combined_Key"].values
         self.assertIn("Los Angeles, California, US", combined_keys)
         self.assertIn("Maricopa, Arizona, US", combined_keys)
